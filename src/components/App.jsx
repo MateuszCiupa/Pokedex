@@ -1,7 +1,3 @@
-import React from 'react';
+import React from "react";
 
-export default () => (
-  <div>
-    yikes
-  </div>
-);
+export default () => <div>yikes</div>;
