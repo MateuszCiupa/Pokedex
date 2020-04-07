@@ -1,2 +1,3 @@
 # Pokedex
-React with PokeAPI
+Create React App based on RESTful API ([PokéAPI](https://pokeapi.co/ "Go to PokéAPI")).
+
