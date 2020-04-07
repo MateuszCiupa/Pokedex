@@ -1,3 +1,3 @@
 # Pokedex
-Create React App based on RESTful API ([PokéAPI](https://pokeapi.co/ "Go to PokéAPI")).
+Create React App based on [RESTful Pokémon API](https://pokeapi.co/ "Go to PokéAPI").
 
