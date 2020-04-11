@@ -9,12 +9,12 @@ export default (pokemon, filter) => {
 
   if (!active) return false;
 
-  if (
-    !inInterval(pheight, fheight) ||
-    !inInterval(pweight, fweight) ||
-    types.includes(type)
-  )
+  if (!inInterval(pheight, fheight) || !inInterval(pweight, fweight))
     return true;
+
+  types.forEach((e) => {
+    if (e.type === type) return true;
+  });
 
   return false;
 };
