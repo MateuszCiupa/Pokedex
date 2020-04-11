@@ -1,7 +1,16 @@
 import { combineReducers } from "redux";
-import pokemons from "./pokemons";
+import pokemon from "./pokemon";
 import error from "./error";
 import loading from "./loading";
 import types from "./types";
+import filter from "./filter";
+import stats from "./stats";
 
-export default combineReducers({ pokemons, error, loading, types });
+export default combineReducers({
+  pokemon,
+  error,
+  loading,
+  types,
+  filter,
+  stats,
+});
