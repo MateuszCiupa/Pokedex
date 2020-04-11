@@ -6,15 +6,17 @@ const inInterval = (x, { min, max }) =>
 export default (pokemon, filter) => {
   const { height: pheight, weight: pweight, types } = pokemon;
   const { active, height: fheight, weight: fweight, type } = filter;
-
   if (!active) return false;
 
-  if (!inInterval(pheight, fheight) || !inInterval(pweight, fweight))
+  if (
+    (!!fheight && !inInterval(pheight, fheight)) ||
+    (!!fweight && !inInterval(pweight, fweight))
+  )
     return true;
 
-  types.forEach((e) => {
-    if (e.type === type) return true;
-  });
+  for (let e of types) {
+    if (e.type.name !== type) return true;
+  }
 
   return false;
 };
