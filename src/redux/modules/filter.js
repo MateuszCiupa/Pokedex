@@ -36,7 +36,6 @@ export default (state = initialState, { type, payload }) => {
       return {
         active: true,
         ...payload,
-        ...state,
       };
 
     default:
