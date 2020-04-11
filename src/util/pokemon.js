@@ -1,11 +1,9 @@
-export const POKE_LIMIT = 20;
-export const pokeUrl = "https://pokeapi.co/api/v2/pokemon";
-const url = "https://pokeapi.co/api/v2";
+export const POKE_DISPLAY_LIMIT = 20;
+export const apiUrl = "https://pokeapi.co/api/v2";
+export const pokeUrl = `${apiUrl}/pokemon`;
+export const pokeCountUrl = `${pokeUrl}?offset=0&limit=1`;
 
-export const getPokemonCount = () => fetch(`${url}/pokemon?offset=0&limit=1`);
+export const getTypes = () => fetch(`${apiUrl}/type`);
 
-export const getPokemons = () => fetch(`${url}/pokemon`);
-
-export const getPokemon = (n) => fetch(`${url}/pokemon/${n}`);
-
-export const getTypes = () => fetch(`${url}/type`);
+export const getPokeWithLimits = (offset, limit) =>
+  fetch(`${pokeUrl}?offset=${offset}&limit=${limit}`);
