@@ -46,26 +46,26 @@ export default (state = initialState, { type, payload }) => {
   switch (type) {
     case SET_POKE_COUNT:
       return {
-        pokeCount: payload,
         ...state,
+        pokeCount: payload,
       };
 
     case SET_PAGE_LIMIT:
       return {
-        pageLimit: payload,
         ...state,
+        pageLimit: payload,
       };
 
     case INCR_PAGE:
       return {
-        currentPage: state.currentPage + 1,
         ...state,
+        currentPage: state.currentPage + 1,
       };
 
     case DECR_PAGE:
       return {
-        currentPage: state.currentPage - 1,
         ...state,
+        currentPage: state.currentPage - 1,
       };
 
     default:

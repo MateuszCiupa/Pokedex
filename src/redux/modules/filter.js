@@ -28,14 +28,14 @@ export default (state = initialState, { type, payload }) => {
   switch (type) {
     case CLEAR_FILTER:
       return {
-        active: false,
         ...state,
+        active: false,
       };
 
     case SET_FILTER:
       return {
-        active: true,
         ...payload,
+        active: true,
       };
 
     default:
