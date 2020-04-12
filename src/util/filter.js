@@ -4,9 +4,10 @@ const inInterval = (x, { min, max }) =>
 
 // returns true if pokemon should be filtered, false - otherwise
 export default (pokemon, filter) => {
+  if (!filter.active) return false;
+
   const { height: pheight, weight: pweight, types } = pokemon;
-  const { active, height: fheight, weight: fweight, type } = filter;
-  if (!active) return false;
+  const { height: fheight, weight: fweight, type } = filter;
 
   if (
     (!!fheight && !inInterval(pheight, fheight)) ||
@@ -14,8 +15,10 @@ export default (pokemon, filter) => {
   )
     return true;
 
-  for (let e of types) {
-    if (e.type.name !== type) return true;
+  if (!!type) {
+    for (let e of types) {
+      if (e.type.name !== type) return true;
+    }
   }
 
   return false;
