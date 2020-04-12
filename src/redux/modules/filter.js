@@ -1,5 +1,6 @@
 const CLEAR_FILTER = "pokedex/filter/CLEAR_FILTER";
 const SET_FILTER = "pokedex/filter/SET_FILTER";
+const SET_FIRST_ID = "pokedex/filter/SET_FIRST_ID";
 
 const _setFilter = (payload) => ({
   type: SET_FILTER,
@@ -8,6 +9,11 @@ const _setFilter = (payload) => ({
 
 export const clearFilter = () => ({
   type: CLEAR_FILTER,
+});
+
+export const setFirstId = (payload) => ({
+  type: SET_FIRST_ID,
+  payload,
 });
 
 export const setFilter = (filter) => (dispatch) => {
@@ -19,6 +25,7 @@ export const setFilter = (filter) => (dispatch) => {
 
 const initialState = {
   active: false,
+  firstId: null,
   type: null,
   weight: null,
   height: null,
@@ -36,6 +43,12 @@ export default (state = initialState, { type, payload }) => {
       return {
         ...payload,
         active: true,
+      };
+
+    case SET_FIRST_ID:
+      return {
+        ...state,
+        firstId: payload,
       };
 
     default:
