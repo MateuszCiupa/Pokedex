@@ -1,24 +1,30 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { getPokeFirst, getPokeNext } from "redux/modules/pokemon";
+import { getPokeMax, getPokePrevious } from "redux/modules/pokemon";
 
-const App = ({ pokemon, loading, error, getPokeFirst, getPokeNext, stats }) => {
+const App = ({
+  pokemon,
+  loading,
+  error,
+  getPokeMax,
+  stats: { rightLimit, leftLimit },
+  getPokePrevious,
+}) => {
   useEffect(() => {
-    getPokeFirst();
-  }, [getPokeFirst]);
-
-  useEffect(() => {
-    console.log(pokemon);
-  }, [pokemon]);
+    getPokeMax();
+  }, [getPokeMax]);
 
   return (
     <div>
-      {pokemon.results.map(({ name, weight, height }) => (
+      {pokemon.results.map(({ name, weight, height, id }) => (
         <div key={name}>
-          Name: {name}, weight: {weight}, height: {height}
+          Name: {name}, weight: {weight}, height: {height}, IDDDD: {id}
         </div>
       ))}
-      <button disabled={loading} onClick={getPokeNext}>
+      <button disabled={loading || leftLimit} onClick={getPokePrevious}>
+        Previous
+      </button>
+      <button disabled={loading || rightLimit} onClick={getPokeMax}>
         Next
       </button>
     </div>
@@ -33,8 +39,8 @@ const mapStateToProps = ({ pokemon, loading, error, stats }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getPokeFirst: () => dispatch(getPokeFirst()),
-  getPokeNext: () => dispatch(getPokeNext()),
+  getPokeMax: () => dispatch(getPokeMax()),
+  getPokePrevious: () => dispatch(getPokePrevious()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
