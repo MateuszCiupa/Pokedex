@@ -76,7 +76,7 @@ export const startLoading = () => async (dispatch) => {
   }
 };
 
-export default (state = [], { type, payload, index }) => {
+export default (state = [[]], { type, payload, index }) => {
   switch (type) {
     case SET_BUFFER:
       return new Array(payload).fill([]);
