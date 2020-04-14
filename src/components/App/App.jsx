@@ -11,7 +11,7 @@ import SortIcon from "@material-ui/icons/Sort";
 import FilterDialog from "components/FilterDialog";
 
 const App = ({
-  stats: { pageCount },
+  stats: { pageCount, currentPage },
   startLoading,
   setCurrentPage,
   filter,
@@ -42,6 +42,7 @@ const App = ({
 
       <Box display={{ xs: "block", sm: "none" }}>
         <Pagination
+          page={currentPage}
           count={filter.active ? filter.pageCount : pageCount}
           size="small"
           onChange={handlePageChange}
@@ -54,6 +55,7 @@ const App = ({
 
       <Box display={{ xs: "none", sm: "block" }}>
         <Pagination
+          page={currentPage}
           count={filter.active ? filter.pageCount : pageCount}
           size="large"
           onChange={handlePageChange}
