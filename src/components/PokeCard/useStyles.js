@@ -11,8 +11,8 @@ export default makeStyles((theme) => ({
   img: {
     margin: "auto",
     display: "block",
-    widthMax: "100%",
-    heightMax: "100%",
+    width: 92,
+    height: 92,
   },
   image: {
     width: 128,
