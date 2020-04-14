@@ -31,4 +31,7 @@ export default makeStyles((theme) => ({
     position: "fixed",
     top: theme.spacing(2),
   },
+  extendedIcon: {
+    marginRight: theme.spacing(1),
+  },
 }));
