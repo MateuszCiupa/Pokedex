@@ -1,4 +1,4 @@
-export const POKE_DISPLAY_LIMIT = 24;
+export const POKE_DISPLAY_LIMIT = 36;
 export const apiUrl = "https://pokeapi.co/api/v2";
 export const pokeUrl = `${apiUrl}/pokemon`;
 export const pokeCountUrl = `${pokeUrl}?offset=0&limit=1`;
