@@ -12,11 +12,16 @@ What things you need to install the software
 
 - Node,js (>=12.16.2)
 
-### Installation
+### Installing
+A step by step series of examples that tell you how to get a development env running
 
-Run in the root of repo directory
+Install dependencies
 ```
 npm i
+```
+Start in dev mode
+```
+npm start
 ```
 
 ## Built with
