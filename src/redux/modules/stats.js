@@ -83,6 +83,7 @@ export default (state = initialState, { type, payload, index }) => {
       };
 
     case SET_CURRENT_PAGE:
+      if (payload <= 0 || payload > state.pageCount) return state;
       return {
         ...state,
         currentPage: payload,
