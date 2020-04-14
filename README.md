@@ -8,18 +8,18 @@ purposes.
 
 ### Prerequisites
 
-What things you need to install the software
+What things you need to install the software:
 
 - Node,js (>=12.16.2)
 
 ### Installing
-A step by step series of examples that tell you how to get a development env running
+A step by step series of examples that tell you how to get a development env running.
 
-Install dependencies
+Install dependencies:
 ```
 npm i
 ```
-Start in dev mode
+Start in dev mode:
 ```
 npm start
 ```
@@ -34,4 +34,4 @@ npm start
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
