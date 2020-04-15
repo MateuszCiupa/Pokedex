@@ -7,15 +7,13 @@ export default makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(2),
     margin: "auto",
+    position: "relative",
+    overflow: "hidden",
   },
   img: {
     margin: "auto",
     display: "block",
-    width: 92,
-    height: 92,
-  },
-  image: {
-    width: 128,
-    height: 128,
+    width: 96,
+    height: 115,
   },
 }));

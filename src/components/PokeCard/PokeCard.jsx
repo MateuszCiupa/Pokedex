@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import useStyles from "./useStyles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { allToUpper } from "util/string";
+import PokeDetailsFade from "components/PokeDetailsFade";
 
 export default ({
   name = "Name",
@@ -13,10 +14,13 @@ export default ({
   pokeId = "Id",
   imgUrl,
 }) => {
+  const [detailsFadeIn, setDetailsFadeIn] = useState(false);
+
   const classes = useStyles();
   return (
     <Grid item xs={12} sm={4} xl={2}>
       <Paper className={classes.paper}>
+        <PokeDetailsFade fadeIn={detailsFadeIn} setFadeIn={setDetailsFadeIn} />
         <Grid container spacing={2}>
           <Grid item>
             <img className={classes.img} src={imgUrl} alt={`${name} img`} />
@@ -32,8 +36,10 @@ export default ({
                   Weight {weight}
                 </Typography>
               </Grid>
-              <Grid item>
-                <Button>More</Button>
+              <Grid item style={{ alignSelf: "flex-end" }}>
+                <Button onClick={() => setDetailsFadeIn((prev) => !prev)}>
+                  More
+                </Button>
               </Grid>
             </Grid>
           </Grid>
