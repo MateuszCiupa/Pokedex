@@ -33,6 +33,8 @@ const App = ({
         variant="extended"
         className={classes.fixedRightBottom}
         onClick={() => setDialogOpen(true)}
+        color="primary"
+        style={{ zIndex: 1 }}
       >
         <SortIcon className={classes.extendedIcon} />
         Filter
@@ -50,6 +52,7 @@ const App = ({
           boundaryCount={1}
           color="primary"
           className={classes.fixedMiddleTop}
+          style={{ zIndex: 1 }}
         />
       </Box>
 
@@ -63,6 +66,7 @@ const App = ({
           boundaryCount={2}
           color="primary"
           className={classes.fixedMiddleTop}
+          style={{ zIndex: 1 }}
         />
       </Box>
 
