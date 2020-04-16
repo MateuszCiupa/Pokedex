@@ -31,7 +31,7 @@ const App = ({
     <div>
       <Fab
         variant="extended"
-        className={classes.fixedRightBottom}
+        className={classes.fixedLeftBottom}
         onClick={() => setDialogOpen(true)}
         color="primary"
         style={{ zIndex: 1 }}
@@ -42,7 +42,7 @@ const App = ({
 
       <FilterDialog open={dialogOpen} setOpen={setDialogOpen} />
 
-      <Box display={{ xs: "block", sm: "none" }}>
+      <Box display={{ xs: "block", md: "none" }}>
         <Pagination
           page={currentPage}
           count={filter.active ? filter.pageCount : pageCount}
@@ -56,7 +56,7 @@ const App = ({
         />
       </Box>
 
-      <Box display={{ xs: "none", sm: "block" }}>
+      <Box display={{ xs: "none", md: "block" }}>
         <Pagination
           page={currentPage}
           count={filter.active ? filter.pageCount : pageCount}
