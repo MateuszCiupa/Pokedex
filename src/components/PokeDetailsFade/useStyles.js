@@ -6,7 +6,7 @@ export default makeStyles((theme) => ({
     padding: theme.spacing(2),
     margin: "auto",
     height: "100%",
-    width: "65%",
+    width: "100%",
     left: 0,
     top: 0,
   },
