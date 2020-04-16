@@ -6,6 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { allToUpper } from "util/string";
 import PokeDetailsFade from "components/PokeDetailsFade";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 
 export default ({
   name = "Name",
@@ -19,32 +20,39 @@ export default ({
   const classes = useStyles();
   return (
     <Grid item xs={12} sm={4} xl={2}>
-      <Paper className={classes.paper}>
-        <PokeDetailsFade fadeIn={detailsFadeIn} setFadeIn={setDetailsFadeIn} />
-        <Grid container spacing={2}>
-          <Grid item>
-            <img className={classes.img} src={imgUrl} alt={`${name} img`} />
-          </Grid>
-          <Grid item container xs>
-            <Grid item container direction="column" spacing={2}>
-              <Grid item>
-                <Typography variant="subtitle1">{allToUpper(name)}</Typography>
-                <Typography variant="body2" color="textSecondary">
-                  Height {height}
-                </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  Weight {weight}
-                </Typography>
-              </Grid>
-              <Grid item style={{ alignSelf: "flex-end" }}>
-                <Button onClick={() => setDetailsFadeIn((prev) => !prev)}>
-                  More
-                </Button>
+      <ClickAwayListener onClickAway={() => setDetailsFadeIn(false)}>
+        <Paper className={classes.paper}>
+          <PokeDetailsFade
+            fadeIn={detailsFadeIn}
+            setFadeIn={setDetailsFadeIn}
+          />
+          <Grid container spacing={2}>
+            <Grid item>
+              <img className={classes.img} src={imgUrl} alt={`${name} img`} />
+            </Grid>
+            <Grid item container xs>
+              <Grid item container direction="column" spacing={2}>
+                <Grid item>
+                  <Typography variant="subtitle1">
+                    {allToUpper(name)}
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary">
+                    Height {height}
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary">
+                    Weight {weight}
+                  </Typography>
+                </Grid>
+                <Grid item style={{ alignSelf: "flex-end" }}>
+                  <Button onClick={() => setDetailsFadeIn((prev) => !prev)}>
+                    {detailsFadeIn ? "Less" : "More"}
+                  </Button>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
-        </Grid>
-      </Paper>
+        </Paper>
+      </ClickAwayListener>
     </Grid>
   );
 };
