@@ -3,7 +3,6 @@ import useStyles from "./useStyles";
 import Grid from "@material-ui/core/Grid";
 import PokeCard from "components/PokeCard";
 import { connect } from "react-redux";
-import { getSprite } from "util/pokemon";
 
 const PokeGrid = ({ pokeBuffer, stats: { currentPage }, filter }) => {
   const classes = useStyles();
