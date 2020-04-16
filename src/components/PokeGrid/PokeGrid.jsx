@@ -13,15 +13,8 @@ const PokeGrid = ({ pokeBuffer, stats: { currentPage }, filter }) => {
         {(filter.active
           ? filter.results[currentPage - 1]
           : pokeBuffer[currentPage - 1]
-        ).map(({ name, weight, height, id, sprites }) => (
-          <PokeCard
-            key={name}
-            name={name}
-            imgUrl={getSprite(sprites)}
-            weight={weight}
-            height={height}
-            pokeId={id}
-          />
+        ).map((pokemon) => (
+          <PokeCard key={pokemon.id} pokemon={pokemon} />
         ))}
       </Grid>
     </div>
